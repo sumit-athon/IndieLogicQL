@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F7E2ECE5F3E528052F11C32 /* Pods_IndieLogicQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3680536AB2DBCB13CD339A46 /* Pods_IndieLogicQL.framework */; };
+		DCF04696265FE41B00064E64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF04695265FE41B00064E64 /* AppDelegate.swift */; };
+		DCF04698265FE41B00064E64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF04697265FE41B00064E64 /* SceneDelegate.swift */; };
+		DCF0469A265FE41B00064E64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF04699265FE41B00064E64 /* ViewController.swift */; };
+		DCF0469D265FE41B00064E64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF0469B265FE41B00064E64 /* Main.storyboard */; };
+		DCF0469F265FE41E00064E64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCF0469E265FE41E00064E64 /* Assets.xcassets */; };
+		DCF046A2265FE41E00064E64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF046A0265FE41E00064E64 /* LaunchScreen.storyboard */; };
+		DCF046BC265FE72200064E64 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF046BB265FE72200064E64 /* API.swift */; };
+		DCF046C0265FE73600064E64 /* ApolloQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF046BE265FE73600064E64 /* ApolloQLManager.swift */; };
+		DCF046C1265FE73600064E64 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF046BF265FE73600064E64 /* Config.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0CC7DC8D405E05757CA0FF45 /* Pods-IndieLogicQL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndieLogicQL.release.xcconfig"; path = "Target Support Files/Pods-IndieLogicQL/Pods-IndieLogicQL.release.xcconfig"; sourceTree = "<group>"; };
+		2EA080096FE46DE4CCA8C570 /* Pods-IndieLogicQL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndieLogicQL.debug.xcconfig"; path = "Target Support Files/Pods-IndieLogicQL/Pods-IndieLogicQL.debug.xcconfig"; sourceTree = "<group>"; };
+		3680536AB2DBCB13CD339A46 /* Pods_IndieLogicQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndieLogicQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF04692265FE41B00064E64 /* IndieLogicQL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndieLogicQL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF04695265FE41B00064E64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCF04697265FE41B00064E64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DCF04699265FE41B00064E64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCF0469C265FE41B00064E64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCF0469E265FE41E00064E64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCF046A1265FE41E00064E64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCF046A3265FE41E00064E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCF046B4265FE60100064E64 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		DCF046B9265FE67800064E64 /* FetchEvent.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchEvent.graphql; sourceTree = "<group>"; };
+		DCF046BB265FE72200064E64 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../../../IndieLogic/IndieLogic/Source/API.swift; sourceTree = "<group>"; };
+		DCF046BE265FE73600064E64 /* ApolloQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApolloQLManager.swift; sourceTree = "<group>"; };
+		DCF046BF265FE73600064E64 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCF0468F265FE41B00064E64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F7E2ECE5F3E528052F11C32 /* Pods_IndieLogicQL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81A21A4D279D8CBFDDBCCF9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2EA080096FE46DE4CCA8C570 /* Pods-IndieLogicQL.debug.xcconfig */,
+				0CC7DC8D405E05757CA0FF45 /* Pods-IndieLogicQL.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8A329B9E50F85B083EE20DF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3680536AB2DBCB13CD339A46 /* Pods_IndieLogicQL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCF04689265FE41B00064E64 = {
+			isa = PBXGroup;
+			children = (
+				DCF04694265FE41B00064E64 /* IndieLogicQL */,
+				DCF04693265FE41B00064E64 /* Products */,
+				81A21A4D279D8CBFDDBCCF9E /* Pods */,
+				8A329B9E50F85B083EE20DF1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DCF04693265FE41B00064E64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCF04692265FE41B00064E64 /* IndieLogicQL.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCF04694265FE41B00064E64 /* IndieLogicQL */ = {
+			isa = PBXGroup;
+			children = (
+				DCF046B3265FE60100064E64 /* GraphQL */,
+				DCF04695265FE41B00064E64 /* AppDelegate.swift */,
+				DCF04697265FE41B00064E64 /* SceneDelegate.swift */,
+				DCF04699265FE41B00064E64 /* ViewController.swift */,
+				DCF0469B265FE41B00064E64 /* Main.storyboard */,
+				DCF0469E265FE41E00064E64 /* Assets.xcassets */,
+				DCF046A0265FE41E00064E64 /* LaunchScreen.storyboard */,
+				DCF046A3265FE41E00064E64 /* Info.plist */,
+			);
+			path = IndieLogicQL;
+			sourceTree = "<group>";
+		};
+		DCF046B3265FE60100064E64 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				DCF046BF265FE73600064E64 /* Config.swift */,
+				DCF046BE265FE73600064E64 /* ApolloQLManager.swift */,
+				DCF046BB265FE72200064E64 /* API.swift */,
+				DCF046B9265FE67800064E64 /* FetchEvent.graphql */,
+				DCF046B4265FE60100064E64 /* schema.json */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCF04691265FE41B00064E64 /* IndieLogicQL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCF046A6265FE41E00064E64 /* Build configuration list for PBXNativeTarget "IndieLogicQL" */;
+			buildPhases = (
+				DCF046AE265FE48500064E64 /* Apollo CLI */,
+				1814B398E3015C99F7D7555F /* [CP] Check Pods Manifest.lock */,
+				DCF0468E265FE41B00064E64 /* Sources */,
+				DCF0468F265FE41B00064E64 /* Frameworks */,
+				DCF04690265FE41B00064E64 /* Resources */,
+				4E422338FDBC5048C3EECD11 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IndieLogicQL;
+			productName = IndieLogicQL;
+			productReference = DCF04692265FE41B00064E64 /* IndieLogicQL.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCF0468A265FE41B00064E64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					DCF04691265FE41B00064E64 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = DCF0468D265FE41B00064E64 /* Build configuration list for PBXProject "IndieLogicQL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCF04689265FE41B00064E64;
+			productRefGroup = DCF04693265FE41B00064E64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCF04691265FE41B00064E64 /* IndieLogicQL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCF04690265FE41B00064E64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCF046A2265FE41E00064E64 /* LaunchScreen.storyboard in Resources */,
+				DCF0469F265FE41E00064E64 /* Assets.xcassets in Resources */,
+				DCF0469D265FE41B00064E64 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1814B398E3015C99F7D7555F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IndieLogicQL-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E422338FDBC5048C3EECD11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndieLogicQL/Pods-IndieLogicQL-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndieLogicQL/Pods-IndieLogicQL-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IndieLogicQL/Pods-IndieLogicQL-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF046AE265FE48500064E64 /* Apollo CLI */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Apollo CLI";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}/GraphQL\"\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=https://graphql.datocms.com/ --header=\"Authorization: Bearer 14a5a9933b4a84e0970ea6d623510a\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCF0468E265FE41B00064E64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCF0469A265FE41B00064E64 /* ViewController.swift in Sources */,
+				DCF04696265FE41B00064E64 /* AppDelegate.swift in Sources */,
+				DCF046BC265FE72200064E64 /* API.swift in Sources */,
+				DCF04698265FE41B00064E64 /* SceneDelegate.swift in Sources */,
+				DCF046C0265FE73600064E64 /* ApolloQLManager.swift in Sources */,
+				DCF046C1265FE73600064E64 /* Config.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DCF0469B265FE41B00064E64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCF0469C265FE41B00064E64 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCF046A0265FE41E00064E64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCF046A1265FE41E00064E64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCF046A4265FE41E00064E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCF046A5265FE41E00064E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCF046A7265FE41E00064E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EA080096FE46DE4CCA8C570 /* Pods-IndieLogicQL.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IndieLogicQL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IndieLogicQL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCF046A8265FE41E00064E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CC7DC8D405E05757CA0FF45 /* Pods-IndieLogicQL.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IndieLogicQL/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IndieLogicQL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCF0468D265FE41B00064E64 /* Build configuration list for PBXProject "IndieLogicQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCF046A4265FE41E00064E64 /* Debug */,
+				DCF046A5265FE41E00064E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCF046A6265FE41E00064E64 /* Build configuration list for PBXNativeTarget "IndieLogicQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCF046A7265FE41E00064E64 /* Debug */,
+				DCF046A8265FE41E00064E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCF0468A265FE41B00064E64 /* Project object */;
+}

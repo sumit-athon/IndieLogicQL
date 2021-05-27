@@ -1,0 +1,6 @@
+framework module Pods_IndieLogicQL {
+  umbrella header "Pods-IndieLogicQL-umbrella.h"
+
+  export *
+  module * { export * }
+}

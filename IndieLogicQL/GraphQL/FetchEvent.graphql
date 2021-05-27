@@ -1,0 +1,14 @@
+query fetchEventBySlug($slug: String!) {
+  allEvents(filter: {streamSlug: {eq: $slug}}) {
+    updatedAt
+    streamState
+    streamSlug
+    id
+    eventDisplayName
+    expectedAudienceCount
+    eventDatetime
+    eventDesc
+    createdAt
+    artistName
+  }
+}
