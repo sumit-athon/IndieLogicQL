@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'IndieLogicQL'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'IndieLogicQL client setup with Indie Logic QL'
  
   s.description      = <<-DESC
