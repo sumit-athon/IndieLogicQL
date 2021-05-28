@@ -9,18 +9,24 @@ import Foundation
 import Apollo
 
 open class ApolloQLManager {
-    static let shared = ApolloQLManager()
-
+    public static let shared = ApolloQLManager()
+    public var graphQLendPoint: String!
+    public var graphQLAuthKey: String?
+    
     private init (){}
 
     private(set) lazy var apollo: ApolloClient = {
+        
+        let url = URL(string: graphQLendPoint)
+        if url == nil {
+            fatalError("Missing Server end point! Provide 'graphQLendPoint' value ")
+        }
         let client = URLSessionClient()
         let cache = InMemoryNormalizedCache()
         let store = ApolloStore(cache: cache)
-        let provider = NetworkInterceptorProvider(client: client, store: store)
-        let url = URL(string: Config.DatoCMS.baseURL)!
+        let provider = NetworkInterceptorProvider(client: client, store: store, authKey: graphQLAuthKey)
         let transport = RequestChainNetworkTransport(interceptorProvider: provider,
-                                                     endpointURL: url)
+                                                     endpointURL: url!)
         return ApolloClient(networkTransport: transport, store: store)
     }()
 
@@ -40,20 +46,36 @@ open class ApolloQLManager {
 }
 
 class TokenAddingInterceptor: ApolloInterceptor {
+    
+    var authKey: String?
+    init(key: String?) { self.authKey = key  }
+    
     func interceptAsync<Operation: GraphQLOperation>(
         chain: RequestChain,
         request: HTTPRequest<Operation>,
         response: HTTPResponse<Operation>?,
         completion: @escaping (Result<GraphQLResult<Operation.Data>, Error>) -> Void) {
-        request.addHeader(name: "Authorization", value: "Bearer \(Config.DatoCMS.apiKey)")
+        if let key = authKey {
+            request.addHeader(name: "Authorization", value: "Bearer \(key)")
+        }
         chain.proceedAsync(request: request, response: response, completion: completion)
     }
 }
 
 class NetworkInterceptorProvider: LegacyInterceptorProvider {
+    
+    var authKey: String?
+    
+    init(client: URLSessionClient = URLSessionClient(),
+                shouldInvalidateClientOnDeinit: Bool = true,
+                store: ApolloStore, authKey: String?) {
+        super.init(client: client, store: store)
+        self.authKey = authKey
+    }
+    
     override func interceptors<Operation: GraphQLOperation>(for operation: Operation) -> [ApolloInterceptor] {
         var interceptors = super.interceptors(for: operation)
-        interceptors.insert(TokenAddingInterceptor(), at: 0)
+        interceptors.insert(TokenAddingInterceptor(key: authKey), at: 0)
         return interceptors
     }
 }

@@ -12,6 +12,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        ApolloQLManager.shared.graphQLendPoint = "https://graphql.datocms.com/"
+        ApolloQLManager.shared.graphQLAuthKey = "14a5a9933b4a84e0970ea6d623510a"
+        
         fetchEvent(slug: "kodak-non-gated")
     }
 
