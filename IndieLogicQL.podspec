@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'IndieLogicQL'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'IndieLogicQL client setup with Indie Logic QL'
  
   s.description      = <<-DESC
@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.source_files = 'IndieLogicQL/GraphQL/*.swift'
  # s.resources    = 'IndieLogicQL/GraphQL/{*.graphql,*.json}'
 
- s.dependency 'Apollo'
+ s.dependency 'Apollo', '~> 0.43.0'
 end
