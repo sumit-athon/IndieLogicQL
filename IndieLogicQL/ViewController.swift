@@ -13,8 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        ApolloQLManager.shared.graphQLendPoint = "https://graphql.datocms.com/"
-        ApolloQLManager.shared.graphQLAuthKey = "14a5a9933b4a84e0970ea6d623510a"
+        ApolloQLManager.shared.graphQLendPoint = ""
+        ApolloQLManager.shared.graphQLAuthKey = ""
         
         fetchEvent(slug: "kodak-non-gated")
     }
