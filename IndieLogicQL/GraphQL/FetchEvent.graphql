@@ -10,5 +10,8 @@ query fetchEventBySlug($slug: String!) {
     eventDesc
     createdAt
     artistName
+    eventImage {
+      url
+    }
   }
 }
