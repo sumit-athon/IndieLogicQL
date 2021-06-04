@@ -28,6 +28,9 @@ query fetchAllEventASC {
     eventDesc
     createdAt
     artistName
+    eventImage {
+      url
+    }
   }
 }
 
@@ -43,5 +46,8 @@ query fetchAllEventDESC {
     eventDesc
     createdAt
     artistName
+    eventImage {
+      url
+    }
   }
 }

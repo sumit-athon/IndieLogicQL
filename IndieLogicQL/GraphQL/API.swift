@@ -267,6 +267,10 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
         eventDesc
         createdAt
         artistName
+        eventImage {
+          __typename
+          url
+        }
       }
     }
     """
@@ -321,6 +325,7 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
           GraphQLField("eventDesc", type: .scalar(String.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("artistName", type: .scalar(String.self)),
+          GraphQLField("eventImage", type: .object(EventImage.selections)),
         ]
       }
 
@@ -330,8 +335,8 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(updatedAt: String, streamState: String? = nil, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamState": streamState, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName])
+      public init(updatedAt: String, streamState: String? = nil, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil) {
+        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamState": streamState, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -432,6 +437,54 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
           resultMap.updateValue(newValue, forKey: "artistName")
         }
       }
+
+      public var eventImage: EventImage? {
+        get {
+          return (resultMap["eventImage"] as? ResultMap).flatMap { EventImage(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "eventImage")
+        }
+      }
+
+      public struct EventImage: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["FileField"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("url", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(url: String) {
+          self.init(unsafeResultMap: ["__typename": "FileField", "url": url])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var url: String {
+          get {
+            return resultMap["url"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "url")
+          }
+        }
+      }
     }
   }
 }
@@ -453,6 +506,10 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
         eventDesc
         createdAt
         artistName
+        eventImage {
+          __typename
+          url
+        }
       }
     }
     """
@@ -507,6 +564,7 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
           GraphQLField("eventDesc", type: .scalar(String.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("artistName", type: .scalar(String.self)),
+          GraphQLField("eventImage", type: .object(EventImage.selections)),
         ]
       }
 
@@ -516,8 +574,8 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(updatedAt: String, streamState: String? = nil, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamState": streamState, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName])
+      public init(updatedAt: String, streamState: String? = nil, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil) {
+        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamState": streamState, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -616,6 +674,54 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "artistName")
+        }
+      }
+
+      public var eventImage: EventImage? {
+        get {
+          return (resultMap["eventImage"] as? ResultMap).flatMap { EventImage(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "eventImage")
+        }
+      }
+
+      public struct EventImage: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["FileField"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("url", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(url: String) {
+          self.init(unsafeResultMap: ["__typename": "FileField", "url": url])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var url: String {
+          get {
+            return resultMap["url"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "url")
+          }
         }
       }
     }

@@ -28,6 +28,15 @@ class ViewController: UIViewController {
         }
     }
 
+    func fetchAllEvent() {
+        
+        ApolloQLManager.shared.fetchAllEventInASC { (events) in
+            print(events?.count)
+        } failure: { (error) in
+            print("error")
+        }
+    }
+    
 
 }
 
