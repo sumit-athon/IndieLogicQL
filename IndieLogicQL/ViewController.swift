@@ -21,7 +21,7 @@ class ViewController: UIViewController {
 
     func fetchEvent(slug: String) {
         
-        ApolloQLManager.shared.fetchEventBySlug(slug: slug) { (events) in
+        ApolloQLManager.shared.fetchEventBySlug(slug: slug, product: "Kodak") { (events) in
             print(events?.count)
         } failure: { (error) in
             print("error")

@@ -1,5 +1,5 @@
-query fetchEventBySlug($slug: String!) {
-  allEvents(filter: {streamSlug: {eq: $slug}}) {
+query fetchEventBySlug($slug: String!, $product: String!) {
+  allEvents(filter: {streamSlug: {eq: $slug}, product: {eq: $product}}) {
     updatedAt
     streamState
     streamSlug
@@ -16,8 +16,8 @@ query fetchEventBySlug($slug: String!) {
   }
 }
 
-query fetchAllEventASC {
-  allEvents(orderBy: eventDatetime_DESC) {
+query fetchAllEventASC($product: String!) {
+  allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
     updatedAt
     streamState
     streamSlug
@@ -34,8 +34,8 @@ query fetchAllEventASC {
   }
 }
 
-query fetchAllEventDESC {
-  allEvents(orderBy: eventDatetime_DESC) {
+query fetchAllEventDESC($product: String!) {
+  allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
     updatedAt
     streamState
     streamSlug

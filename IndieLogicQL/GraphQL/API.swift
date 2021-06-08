@@ -8,8 +8,8 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query fetchEventBySlug($slug: String!) {
-      allEvents(filter: {streamSlug: {eq: $slug}}) {
+    query fetchEventBySlug($slug: String!, $product: String!) {
+      allEvents(filter: {streamSlug: {eq: $slug}, product: {eq: $product}}) {
         __typename
         updatedAt
         streamState
@@ -32,13 +32,15 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
   public let operationName: String = "fetchEventBySlug"
 
   public var slug: String
+  public var product: String
 
-  public init(slug: String) {
+  public init(slug: String, product: String) {
     self.slug = slug
+    self.product = product
   }
 
   public var variables: GraphQLMap? {
-    return ["slug": slug]
+    return ["slug": slug, "product": product]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -46,7 +48,7 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("allEvents", arguments: ["filter": ["streamSlug": ["eq": GraphQLVariable("slug")]]], type: .nonNull(.list(.nonNull(.object(AllEvent.selections))))),
+        GraphQLField("allEvents", arguments: ["filter": ["streamSlug": ["eq": GraphQLVariable("slug")], "product": ["eq": GraphQLVariable("product")]]], type: .nonNull(.list(.nonNull(.object(AllEvent.selections))))),
       ]
     }
 
@@ -254,8 +256,8 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query fetchAllEventASC {
-      allEvents(orderBy: eventDatetime_DESC) {
+    query fetchAllEventASC($product: String!) {
+      allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
         __typename
         updatedAt
         streamState
@@ -277,7 +279,14 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
 
   public let operationName: String = "fetchAllEventASC"
 
-  public init() {
+  public var product: String
+
+  public init(product: String) {
+    self.product = product
+  }
+
+  public var variables: GraphQLMap? {
+    return ["product": product]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -285,7 +294,7 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("allEvents", arguments: ["orderBy": "eventDatetime_DESC"], type: .nonNull(.list(.nonNull(.object(AllEvent.selections))))),
+        GraphQLField("allEvents", arguments: ["orderBy": "eventDatetime_DESC", "filter": ["product": ["eq": GraphQLVariable("product")]]], type: .nonNull(.list(.nonNull(.object(AllEvent.selections))))),
       ]
     }
 
@@ -493,8 +502,8 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query fetchAllEventDESC {
-      allEvents(orderBy: eventDatetime_DESC) {
+    query fetchAllEventDESC($product: String!) {
+      allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
         __typename
         updatedAt
         streamState
@@ -516,7 +525,14 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
 
   public let operationName: String = "fetchAllEventDESC"
 
-  public init() {
+  public var product: String
+
+  public init(product: String) {
+    self.product = product
+  }
+
+  public var variables: GraphQLMap? {
+    return ["product": product]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -524,7 +540,7 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("allEvents", arguments: ["orderBy": "eventDatetime_DESC"], type: .nonNull(.list(.nonNull(.object(AllEvent.selections))))),
+        GraphQLField("allEvents", arguments: ["orderBy": "eventDatetime_DESC", "filter": ["product": ["eq": GraphQLVariable("product")]]], type: .nonNull(.list(.nonNull(.object(AllEvent.selections))))),
       ]
     }
 

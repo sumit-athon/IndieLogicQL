@@ -31,8 +31,8 @@ open class ApolloQLManager {
     }()
 
     // Fetch Events filtered by slug
-    open func fetchEventBySlug(slug: String, success: @escaping([FetchEventBySlugQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
-        self.apollo.fetch(query: FetchEventBySlugQuery(slug: slug), resultHandler: { result in
+    open func fetchEventBySlug(slug: String, product: String = "Kodak", success: @escaping([FetchEventBySlugQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
+        self.apollo.fetch(query: FetchEventBySlugQuery(slug: slug, product: product), resultHandler: { result in
             switch result {
             case .success(let graphResult):
                 let events = graphResult.data?.allEvents
@@ -45,8 +45,8 @@ open class ApolloQLManager {
     }
     
     // Fetch Events filtered by slug
-    open func fetchAllEventInASC(success: @escaping([FetchAllEventAscQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
-        self.apollo.fetch(query: FetchAllEventAscQuery(), resultHandler: { result in
+    open func fetchAllEventInASC(product: String = "Kodak", success: @escaping([FetchAllEventAscQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
+        self.apollo.fetch(query: FetchAllEventAscQuery(product: product), resultHandler: { result in
             switch result {
             case .success(let graphResult):
                 let events = graphResult.data?.allEvents
@@ -59,8 +59,8 @@ open class ApolloQLManager {
     }
     
     // Fetch Events filtered by slug
-    open func fetchAllEventInDESC(success: @escaping([FetchAllEventDescQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
-        self.apollo.fetch(query: FetchAllEventDescQuery(), resultHandler: { result in
+    open func fetchAllEventInDESC(product: String = "Kodak", success: @escaping([FetchAllEventDescQuery.Data.AllEvent]?) -> Void, failure: @escaping(Error) -> Void) {
+        self.apollo.fetch(query: FetchAllEventDescQuery(product: product), resultHandler: { result in
             switch result {
             case .success(let graphResult):
                 let events = graphResult.data?.allEvents
