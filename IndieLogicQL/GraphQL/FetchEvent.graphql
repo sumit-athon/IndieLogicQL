@@ -1,7 +1,6 @@
 query fetchEventBySlug($slug: String!, $product: String!) {
   allEvents(filter: {streamSlug: {eq: $slug}, product: {eq: $product}}) {
     updatedAt
-    streamState
     streamSlug
     id
     eventDisplayName
@@ -11,6 +10,9 @@ query fetchEventBySlug($slug: String!, $product: String!) {
     createdAt
     artistName
     eventImage {
+      url
+    }
+    heroImage {
       url
     }
   }
@@ -19,7 +21,6 @@ query fetchEventBySlug($slug: String!, $product: String!) {
 query fetchAllEventASC($product: String!) {
   allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
     updatedAt
-    streamState
     streamSlug
     id
     eventDisplayName
@@ -31,13 +32,15 @@ query fetchAllEventASC($product: String!) {
     eventImage {
       url
     }
+    heroImage {
+      url
+    }
   }
 }
 
 query fetchAllEventDESC($product: String!) {
   allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
     updatedAt
-    streamState
     streamSlug
     id
     eventDisplayName
@@ -47,6 +50,9 @@ query fetchAllEventDESC($product: String!) {
     createdAt
     artistName
     eventImage {
+      url
+    }
+    heroImage {
       url
     }
   }
