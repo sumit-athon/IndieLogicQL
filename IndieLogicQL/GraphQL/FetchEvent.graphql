@@ -1,59 +1,68 @@
 query fetchEventBySlug($slug: String!, $product: String!) {
-  allEvents(filter: {streamSlug: {eq: $slug}, product: {eq: $product}}) {
-    updatedAt
-    streamSlug
-    id
-    eventDisplayName
-    expectedAudienceCount
-    eventDatetime
-    eventDesc
-    createdAt
-    artistName
-    eventImage {
-      url
+    allEvents(filter: {streamSlug: {eq: $slug}, product: {eq: $product}}) {
+        updatedAt
+        streamSlug
+        id
+        eventDisplayName
+        expectedAudienceCount
+        eventDatetime
+        eventDesc
+        createdAt
+        artistName
+        eventImage {
+            url
+        }
+        heroImage {
+            url
+        }
+        gatingsubscription {
+            gated
+        }
     }
-    heroImage {
-      url
-    }
-  }
 }
 
 query fetchAllEventASC($product: String!) {
-  allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
-    updatedAt
-    streamSlug
-    id
-    eventDisplayName
-    expectedAudienceCount
-    eventDatetime
-    eventDesc
-    createdAt
-    artistName
-    eventImage {
-      url
+    allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
+        updatedAt
+        streamSlug
+        id
+        eventDisplayName
+        expectedAudienceCount
+        eventDatetime
+        eventDesc
+        createdAt
+        artistName
+        eventImage {
+            url
+        }
+        heroImage {
+            url
+        }
+        gatingsubscription {
+            gated
+        }
     }
-    heroImage {
-      url
-    }
-  }
 }
 
 query fetchAllEventDESC($product: String!) {
-  allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
-    updatedAt
-    streamSlug
-    id
-    eventDisplayName
-    expectedAudienceCount
-    eventDatetime
-    eventDesc
-    createdAt
-    artistName
-    eventImage {
-      url
+    allEvents(orderBy: eventDatetime_DESC, filter: {product: {eq: $product}}) {
+        updatedAt
+        streamSlug
+        id
+        eventDisplayName
+        expectedAudienceCount
+        eventDatetime
+        eventDesc
+        createdAt
+        artistName
+        eventImage {
+            url
+        }
+        heroImage {
+            url
+        }
+        gatingsubscription {
+            gated
+        }
     }
-    heroImage {
-      url
-    }
-  }
 }

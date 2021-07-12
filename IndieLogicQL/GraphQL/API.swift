@@ -28,6 +28,10 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
           __typename
           url
         }
+        gatingsubscription {
+          __typename
+          gated
+        }
       }
     }
     """
@@ -92,6 +96,7 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
           GraphQLField("artistName", type: .scalar(String.self)),
           GraphQLField("eventImage", type: .object(EventImage.selections)),
           GraphQLField("heroImage", type: .object(HeroImage.selections)),
+          GraphQLField("gatingsubscription", type: .object(Gatingsubscription.selections)),
         ]
       }
 
@@ -101,8 +106,8 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(updatedAt: String, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil, heroImage: HeroImage? = nil) {
-        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }, "heroImage": heroImage.flatMap { (value: HeroImage) -> ResultMap in value.resultMap }])
+      public init(updatedAt: String, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil, heroImage: HeroImage? = nil, gatingsubscription: Gatingsubscription? = nil) {
+        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }, "heroImage": heroImage.flatMap { (value: HeroImage) -> ResultMap in value.resultMap }, "gatingsubscription": gatingsubscription.flatMap { (value: Gatingsubscription) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -213,6 +218,15 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
         }
       }
 
+      public var gatingsubscription: Gatingsubscription? {
+        get {
+          return (resultMap["gatingsubscription"] as? ResultMap).flatMap { Gatingsubscription(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "gatingsubscription")
+        }
+      }
+
       public struct EventImage: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["FileField"]
 
@@ -290,6 +304,45 @@ public final class FetchEventBySlugQuery: GraphQLQuery {
           }
         }
       }
+
+      public struct Gatingsubscription: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["GatingsubscriptionRecord"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("gated", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(gated: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "GatingsubscriptionRecord", "gated": gated])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var gated: String? {
+          get {
+            return resultMap["gated"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "gated")
+          }
+        }
+      }
     }
   }
 }
@@ -317,6 +370,10 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
         heroImage {
           __typename
           url
+        }
+        gatingsubscription {
+          __typename
+          gated
         }
       }
     }
@@ -380,6 +437,7 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
           GraphQLField("artistName", type: .scalar(String.self)),
           GraphQLField("eventImage", type: .object(EventImage.selections)),
           GraphQLField("heroImage", type: .object(HeroImage.selections)),
+          GraphQLField("gatingsubscription", type: .object(Gatingsubscription.selections)),
         ]
       }
 
@@ -389,8 +447,8 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(updatedAt: String, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil, heroImage: HeroImage? = nil) {
-        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }, "heroImage": heroImage.flatMap { (value: HeroImage) -> ResultMap in value.resultMap }])
+      public init(updatedAt: String, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil, heroImage: HeroImage? = nil, gatingsubscription: Gatingsubscription? = nil) {
+        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }, "heroImage": heroImage.flatMap { (value: HeroImage) -> ResultMap in value.resultMap }, "gatingsubscription": gatingsubscription.flatMap { (value: Gatingsubscription) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -501,6 +559,15 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
         }
       }
 
+      public var gatingsubscription: Gatingsubscription? {
+        get {
+          return (resultMap["gatingsubscription"] as? ResultMap).flatMap { Gatingsubscription(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "gatingsubscription")
+        }
+      }
+
       public struct EventImage: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["FileField"]
 
@@ -578,6 +645,45 @@ public final class FetchAllEventAscQuery: GraphQLQuery {
           }
         }
       }
+
+      public struct Gatingsubscription: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["GatingsubscriptionRecord"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("gated", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(gated: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "GatingsubscriptionRecord", "gated": gated])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var gated: String? {
+          get {
+            return resultMap["gated"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "gated")
+          }
+        }
+      }
     }
   }
 }
@@ -605,6 +711,10 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
         heroImage {
           __typename
           url
+        }
+        gatingsubscription {
+          __typename
+          gated
         }
       }
     }
@@ -668,6 +778,7 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
           GraphQLField("artistName", type: .scalar(String.self)),
           GraphQLField("eventImage", type: .object(EventImage.selections)),
           GraphQLField("heroImage", type: .object(HeroImage.selections)),
+          GraphQLField("gatingsubscription", type: .object(Gatingsubscription.selections)),
         ]
       }
 
@@ -677,8 +788,8 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(updatedAt: String, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil, heroImage: HeroImage? = nil) {
-        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }, "heroImage": heroImage.flatMap { (value: HeroImage) -> ResultMap in value.resultMap }])
+      public init(updatedAt: String, streamSlug: String? = nil, id: String, eventDisplayName: String? = nil, expectedAudienceCount: String? = nil, eventDatetime: String? = nil, eventDesc: String? = nil, createdAt: String, artistName: String? = nil, eventImage: EventImage? = nil, heroImage: HeroImage? = nil, gatingsubscription: Gatingsubscription? = nil) {
+        self.init(unsafeResultMap: ["__typename": "EventRecord", "updatedAt": updatedAt, "streamSlug": streamSlug, "id": id, "eventDisplayName": eventDisplayName, "expectedAudienceCount": expectedAudienceCount, "eventDatetime": eventDatetime, "eventDesc": eventDesc, "createdAt": createdAt, "artistName": artistName, "eventImage": eventImage.flatMap { (value: EventImage) -> ResultMap in value.resultMap }, "heroImage": heroImage.flatMap { (value: HeroImage) -> ResultMap in value.resultMap }, "gatingsubscription": gatingsubscription.flatMap { (value: Gatingsubscription) -> ResultMap in value.resultMap }])
       }
 
       public var __typename: String {
@@ -789,6 +900,15 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
         }
       }
 
+      public var gatingsubscription: Gatingsubscription? {
+        get {
+          return (resultMap["gatingsubscription"] as? ResultMap).flatMap { Gatingsubscription(unsafeResultMap: $0) }
+        }
+        set {
+          resultMap.updateValue(newValue?.resultMap, forKey: "gatingsubscription")
+        }
+      }
+
       public struct EventImage: GraphQLSelectionSet {
         public static let possibleTypes: [String] = ["FileField"]
 
@@ -863,6 +983,45 @@ public final class FetchAllEventDescQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "url")
+          }
+        }
+      }
+
+      public struct Gatingsubscription: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["GatingsubscriptionRecord"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("gated", type: .scalar(String.self)),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(gated: String? = nil) {
+          self.init(unsafeResultMap: ["__typename": "GatingsubscriptionRecord", "gated": gated])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var gated: String? {
+          get {
+            return resultMap["gated"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "gated")
           }
         }
       }
